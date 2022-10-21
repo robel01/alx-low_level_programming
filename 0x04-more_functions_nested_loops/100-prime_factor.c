@@ -1,26 +1,32 @@
 #include <stdio.h>
-
 /**
- * main - prime numbers
+ *main - largest prime facter of 612852475143.
  *
- * Return: 0
+ *Return: 0
  */
-
 int main(void)
 {
-	long num = 612852475143;
-	long divisor = 2;
-	long larg_prim = 0;
+	long int x, i, pf;
 
-	while (num != 1)
+	pf = -1;
+	x = 612852475143;
+
+	while (x % 2 == 0)
 	{
-		if (num % divisor == 0)
-		{
-			num = num / divisor;
-			larg_prim = divisor;
-		}
-		divisor += 1;
+		pf = 2;
+		x = x / 2;
 	}
-	printf("%ld\n", larg_prim);
+	for (i = 3; i <= x / 2; i = i + 2)
+	{
+		while (x % i == 0)
+		{
+			pf = i;
+			x = x / i;
+		}
+	}
+	if (x > 2)
+		pf = x;
+
+	printf("%ld\n", pf);
 	return (0);
 }

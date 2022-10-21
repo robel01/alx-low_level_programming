@@ -1,40 +1,36 @@
 #include <stdio.h>
-
 /**
- * main - Fizz Buzz code
+ *main - replace multiples of 3 and 5.
  *
- * Return: void
+ *Return: 0.
  */
-
 int main(void)
 {
-	int i = 1;
+	int i;
 
-	while (i <= 100)
+	for (i = 1; i <= 100; i++)
 	{
-		if (i % 3 == 0 && i % 5 == 0)
+		if (i % 3 == 0 &&  i % 5 == 0)
 		{
-			printf("FizzBuzz");
+			printf("%s", "FizzBuzz");
 		}
 		else if (i % 3 == 0)
 		{
-			printf("Fizz");
+			printf("%s", "Fizz");
 		}
 		else if (i % 5 == 0)
 		{
-			printf("Buzz");
+			printf("%s", "Buzz");
 		}
 		else
 		{
-			printf("%i", i);
+			printf("%d", i);
 		}
 		if (i != 100)
 		{
-			putchar(' ');
+			printf(" ");
 		}
-
-		i++;
 	}
-	putchar('\n');
+	printf("\n");
 	return (0);
 }
